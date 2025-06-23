@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Rebot 7.3.1 (Python 3.11.12 on linux)" generated="2025-06-23T09:20:34.166687" rpa="false" schemaversion="5">
+<robot generator="Rebot 7.3.1 (Python 3.11.12 on linux)" generated="2025-06-23T09:27:04.600830" rpa="false" schemaversion="5">
 <suite id="s1" name="Tests" source="/home/runner/work/actionsrobotupdated/actionsrobotupdated/tests">
 <suite id="s1-s1" name="Test Homepage" source="/home/runner/work/actionsrobotupdated/actionsrobotupdated/tests/test_homepage.robot">
 <kw name="Open Browser To Homepage" owner="keywords" type="SETUP">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-06-23T09:20:23.806798" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f88d2419e10&gt;</msg>
+<msg time="2025-06-23T09:26:55.476739" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f7571054790&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-06-23T09:20:23.806516" elapsed="0.000325"/>
+<status status="PASS" start="2025-06-23T09:26:55.476463" elapsed="0.000315"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--headless</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-06-23T09:20:23.806978" elapsed="0.000178"/>
+<status status="PASS" start="2025-06-23T09:26:55.476913" elapsed="0.000148"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-gpu</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-06-23T09:20:23.807274" elapsed="0.000139"/>
+<status status="PASS" start="2025-06-23T09:26:55.477174" elapsed="0.000156"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--no-sandbox</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-06-23T09:20:23.807513" elapsed="0.000142"/>
+<status status="PASS" start="2025-06-23T09:26:55.477449" elapsed="0.000135"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-dev-shm-usage</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-06-23T09:20:23.807754" elapsed="0.000122"/>
+<status status="PASS" start="2025-06-23T09:26:55.477679" elapsed="0.000115"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-23T09:20:23.808269" level="INFO">Opening browser 'chrome' to base url 'https://example.com'.</msg>
+<msg time="2025-06-23T09:26:55.478156" level="INFO">Opening browser 'chrome' to base url 'https://example.com'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-23T09:20:23.807996" elapsed="9.633630"/>
+<status status="PASS" start="2025-06-23T09:26:55.477908" elapsed="8.384439"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-23T09:20:33.441959" elapsed="0.017416"/>
+<status status="PASS" start="2025-06-23T09:27:03.862602" elapsed="0.020906"/>
 </kw>
-<status status="PASS" start="2025-06-23T09:20:23.805905" elapsed="9.653628"/>
+<status status="PASS" start="2025-06-23T09:26:55.475857" elapsed="8.407797"/>
 </kw>
 <test id="s1-s1-t1" name="Test Title Is Correct" line="8">
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-06-23T09:20:33.497646" level="INFO">Page title is 'Example Domain'.</msg>
+<msg time="2025-06-23T09:27:03.908729" level="INFO">Page title is 'Example Domain'.</msg>
 <arg>Example Domain</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-06-23T09:20:33.460191" elapsed="0.037539"/>
+<status status="PASS" start="2025-06-23T09:27:03.884212" elapsed="0.024618"/>
 </kw>
-<status status="PASS" start="2025-06-23T09:20:33.459659" elapsed="0.038217"/>
+<status status="PASS" start="2025-06-23T09:27:03.883763" elapsed="0.025239"/>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-06-23T09:20:33.498462" elapsed="0.058977"/>
+<status status="PASS" start="2025-06-23T09:27:03.909591" elapsed="0.059322"/>
 </kw>
-<status status="PASS" start="2025-06-23T09:20:23.604269" elapsed="9.953253"/>
+<status status="PASS" start="2025-06-23T09:26:55.322616" elapsed="8.646390"/>
 </suite>
-<status status="PASS" start="2025-06-23T09:20:23.583915" elapsed="9.974300"/>
+<status status="PASS" start="2025-06-23T09:26:55.302561" elapsed="8.667202"/>
 </suite>
 <statistics>
 <total>
