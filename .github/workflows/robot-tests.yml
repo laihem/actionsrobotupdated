@@ -1,0 +1,44 @@
+name: Run Robot Framework Tests and Deploy Reports
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  robot-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser || true
+          if ! command -v google-chrome &> /dev/null; then
+            sudo ln -s /usr/bin/chromium-browser /usr/bin/google-chrome || true
+          fi
+
+      - name: Run Robot Framework Tests
+        run: |
+          robot -d results tests
+
+      - name: Generate HTML Report
+        run: |
+          pip install robotframework
+          rebot --outputdir results --log log.html --report report.html --output output.xml results/output.xml
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./results
