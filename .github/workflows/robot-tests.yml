@@ -36,6 +36,8 @@ jobs:
         run: |
           pip install robotframework
           rebot --outputdir results --log log.html --report report.html --output output.xml results/output.xml
+      - name: Make report.html the default index.html
+        run: cp results/report.html results/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
