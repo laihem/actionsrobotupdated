@@ -7,3 +7,4 @@ Suite Teardown    Close Browser
 *** Test Cases ***
 Test Title Is Correct
     Title Should Be    Example Domain
+# Test Case 1
